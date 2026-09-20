@@ -1,0 +1,157 @@
+/* Slide & Solve tanıtım ve gizlilik sayfaları.
+   Renkler uygulamanın paletinden: lib/theme/tokens.dart */
+
+:root {
+  --tabletop: #6e8c7e;
+  --tray: #c08a4e;
+  --plaque: #f3ead8;
+  --ink: #2f2a26;
+  --coral: #e0755c;
+  --blue: #4e7fa8;
+  --shade: rgba(0, 0, 0, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 32px 20px 64px;
+  background: var(--tabletop);
+  color: var(--ink);
+  font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main {
+  max-width: 44rem;
+  margin: 0 auto;
+  background: var(--plaque);
+  border-radius: 24px;
+  padding: clamp(24px, 5vw, 48px);
+  box-shadow: 0 2px 4px var(--shade), 0 12px 32px rgba(0, 0, 0, 0.18);
+}
+
+header.tray {
+  max-width: 44rem;
+  margin: 0 auto 28px;
+  background: linear-gradient(135deg, #d09a5c, var(--tray));
+  border-radius: 26px;
+  padding: 28px clamp(20px, 4vw, 40px);
+  box-shadow: 0 2px 4px var(--shade), 0 12px 28px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+header.tray img {
+  width: 96px;
+  height: 96px;
+  border-radius: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+header.tray h1 {
+  font-family: "Baloo 2", "Nunito Sans", sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  margin: 0;
+  text-shadow: 0 3px 0 var(--coral), 0 -1px 2px rgba(0, 0, 0, 0.25);
+  text-wrap: balance;
+}
+
+header.tray p {
+  margin: 4px 0 0;
+  font-size: 1.05rem;
+}
+
+h2 {
+  font-family: "Baloo 2", "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  margin: 2em 0 0.4em;
+}
+
+h2:first-of-type {
+  margin-top: 0.6em;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+ul {
+  padding-left: 1.2em;
+}
+
+a {
+  color: #2d5f87;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.updated {
+  font-size: 0.95rem;
+  opacity: 0.75;
+  margin-top: 0;
+}
+
+.links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+}
+
+.links a {
+  display: inline-block;
+  background: var(--blue);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 0 #3c6485, 0 6px 12px rgba(0, 0, 0, 0.2);
+  transition-property: transform, box-shadow;
+  transition-duration: 120ms;
+  transition-timing-function: ease-out;
+}
+
+.links a.quiet {
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 4px 0 #d8cdb8, 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.links a:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #3c6485, 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  max-width: 44rem;
+  margin: 24px auto 0;
+  color: #eef3ef;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+footer a {
+  color: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .links a {
+    transition: none;
+  }
+}
